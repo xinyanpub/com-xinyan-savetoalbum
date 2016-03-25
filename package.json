@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0",
+  "name": "com-xinyan-save-to-album",
+  "cordova_name": "SaveToAlbum",
+  "description": "A cordova plugin allows you to save photo to album in IOS and Android.",
+  "license": "MIT",
+  "repo": "",
+  "keywords": [
+    " ios",
+    "android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com-xinyan-save-to-album"
+        version="0.1.0">
+
+  <name>SaveToAlbum</name>
+  <description>
+    A cordova plugin which allows you to save photo to album in IOS and Android.
+  </description>
+
+  <license>MIT</license>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
+
+  <js-module src="www/SaveToAlbum.js" name="SaveToAlbum">
+    <clobbers target="window.plugins.savetoalbum" />
+  </js-module>
+
+    <!-- android -->
+    <platform name="android">
+      <config-file target="res/xml/config.xml" parent="/*">
+        <feature name="SaveToAlbum">
+          <param name="android-package" value="com.xinyan.SaveToAlbum" />
+        </feature>
+      </config-file>
+      <source-file src="src/android/com/xinyan/SaveToAlbum.java" target-dir="src/com/xinyan" />
+    </platform>
+  
+  <!-- ios -->
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="SaveToAlbum">
+        <param name="ios-package" value="SaveToAlbum"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/SaveToAlbum.h"/>
+    <source-file src="src/ios/SaveToAlbum.m"/>
+  </platform>
+
+</plugin>
