@@ -12,7 +12,6 @@ SaveToAlbum.prototype.download = function (url, successCallback, errorCallback, 
           encodeURI(url),
           filePath,
           function(entry) {
-              console.info(entry);
               exec(successCallback, errorCallback, "SaveToAlbum", "saveToAlbum", [entry.toURL(), filePath]);
           },
           function(error) {
