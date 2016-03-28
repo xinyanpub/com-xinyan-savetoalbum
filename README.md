@@ -13,6 +13,8 @@ This requires cordova 4.0+
 Example:
 
 ```
+for IOS:
+
 window.plugins.savetoalbum.download(url, success, fail);
 
 var success = function() {
@@ -24,6 +26,18 @@ var fail = function(statusCode) {
   console.log(statusCode);
 }
 
+for Android:
+
+window.plugins.savetoalbum.download(url, success, fail, filePath);
+
+var success = function() {
+  // Do something after save success
+}
+
+var fail = function(statusCode) {
+  // Why did it fail? - look in the plug in for source of error codes.
+  console.log(statusCode);
+}
 
 ## LICENSE ##
 
