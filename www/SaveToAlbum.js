@@ -9,20 +9,21 @@ SaveToAlbum.prototype.download = function (url, successCallback, errorCallback, 
         var fileTransfer = new FileTransfer();
 
         fileTransfer.download(
-            encodeURI(url),
-            filePath,
-            function() {
-                exec(successCallback, errorCallback, "SaveToAlbum", "saveToAlbum", [url, filePath]);
-            },
-            function(error) {
-                alert('Something went wrong. Try again later.');
-            },
-            false,
-            {}
+          encodeURI(url),
+          filePath,
+          function(entry) {
+              console.info(entry);
+              exec(successCallback, errorCallback, "SaveToAlbum", "saveToAlbum", [entry.toURL(), filePath]);
+          },
+          function(error) {
+              alert('文件保存出错');
+          },
+          false,
+          {}
         );
 
     } else {
-      exec(successCallback, errorCallback, "SaveToAlbum", "saveToAlbum", [url]);
+        exec(successCallback, errorCallback, "SaveToAlbum", "saveToAlbum", [url]);
     }
 }
 
